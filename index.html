@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery X-15 Fifteen - الخدمة الأكثر تطوراً في العالم</title>
+  <meta name="description" content="منصة Delivery X-15 Fifteen المتطورة لخدمات التوصيل السريع والآمن في مصر. أفضل خدمة توصيل مع ضمان الجودة والسرعة.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  
+  <style>
+    :root {
+      --x15-delivery-red: rgb(239, 68, 68);
+      --x15-fifteen-blue: rgb(59, 130, 246);
+      --x15-bright-blue: rgb(37, 99, 235);
+      --x15-accent-blue: rgb(14, 165, 233);
+      --x15-glow-blue: rgb(96, 165, 250);
+      --dark-primary: rgb(15, 23, 42);
+      --dark-secondary: rgb(30, 41, 59);
+      --dark-tertiary: rgb(51, 65, 85);
+      --dark-surface: rgba(30, 41, 59, 0.95);
+    }
+
+    * {
+      font-family: 'Cairo', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      background: linear-gradient(135deg, rgb(239, 246, 255), rgb(255, 255, 255), rgb(219, 234, 254));
+      color: rgb(30, 41, 59);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    }
+
+    .dark body {
+      background: linear-gradient(135deg, var(--dark-primary), var(--dark-secondary), rgb(30, 58, 138));
+      color: rgb(226, 232, 240);
+      min-height: 100vh;
+    }
+
+    .dark .glass-effect {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+    }
+
+    .dark header {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+    }
+
+    .dark main {
+      background: transparent;
+    }
+
+    .delivery-text {
+      color: var(--x15-delivery-red);
+      font-weight: bold;
+    }
+
+    .fifteen-text {
+      background: linear-gradient(135deg, var(--x15-fifteen-blue), var(--x15-glow-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: bold;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--x15-bright-blue), var(--x15-accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .dark .gradient-text {
+      background: linear-gradient(135deg, rgb(147, 197, 253), rgb(96, 165, 250));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .floating-elements {
+      position: relative;
+    }
+
+    .floating-elements::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(147, 197, 253, 0.1));
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+      top: 10%;
+      left: 10%;
+      filter: blur(1px);
+    }
+
+    .floating-elements::after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(219, 234, 254, 0.2), rgba(59, 130, 246, 0.1));
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite reverse;
+      bottom: 20%;
+      right: 15%;
+      filter: blur(2px);
+    }
+
+    .dark .floating-elements::before {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(147, 197, 253, 0.15));
+    }
+
+    .dark .floating-elements::after {
+      background: linear-gradient(135deg, rgba(99, 179, 237, 0.2), rgba(59, 130, 246, 0.15));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+      100% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+    }
+
+    @keyframes slide-up {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounce-soft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite alternate;
+    }
+
+    .animate-slide-up {
+      animation: slide-up 0.8s ease-out;
+    }
+
+    .animate-bounce-soft {
+      animation: bounce-soft 2s ease-in-out infinite;
+    }
+
+    .success-animation {
+      animation: bounce-soft 0.6s ease-in-out;
+    }
+
+    .floating-input {
+      position: relative;
+    }
+
+    .floating-input input,
+    .floating-input textarea {
+      width: 100%;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 0.75rem;
+      color: rgb(30, 41, 59);
+      font-size: 1rem;
+      transition: all 0.3s;
+      outline: none;
+    }
+
+    .floating-input input:focus,
+    .floating-input textarea:focus {
+      border-color: rgb(59, 130, 246);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .floating-input label {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgb(100, 116, 139);
+      transition: all 0.3s;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    .floating-input textarea + label {
+      top: 1rem;
+      transform: none;
+    }
+
+    .floating-input input:focus + label,
+    .floating-input input:not(:placeholder-shown) + label,
+    .floating-input textarea:focus + label,
+    .floating-input textarea:not(:placeholder-shown) + label {
+      top: 0;
+      font-size: 0.75rem;
+      color: rgb(59, 130, 246);
+      background: white;
+      padding: 0 0.5rem;
+      transform: translateY(-50%);
+    }
+
+    .dark .floating-input input,
+    .dark .floating-input textarea {
+      background: var(--dark-surface);
+      color: rgb(226, 232, 240);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .dark .floating-input input:focus,
+    .dark .floating-input textarea:focus {
+      background: rgba(51, 65, 85, 0.9);
+      border-color: rgb(147, 197, 253);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .dark .floating-input label {
+      color: rgb(148, 163, 184);
+    }
+
+    .dark .floating-input input:focus + label,
+    .dark .floating-input input:not(:placeholder-shown) + label,
+    .dark .floating-input textarea:focus + label,
+    .dark .floating-input textarea:not(:placeholder-shown) + label {
+      background: var(--dark-secondary);
+      color: rgb(147, 197, 253);
+    }
+
+    /* Enhanced Dark Mode Particles Canvas */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.3;
+      mix-blend-mode: multiply;
+    }
+
+    .dark #particles-canvas {
+      opacity: 0.6;
+      mix-blend-mode: screen;
+    }
+
+    /* Enhanced Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 1rem;
+      padding: 0.875rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .theme-toggle {
+      background: rgba(30, 41, 59, 0.6);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .dark .theme-toggle:hover {
+      background: rgba(51, 65, 85, 0.8);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+    }
+
+    .theme-toggle-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgb(71, 85, 105);
+      white-space: nowrap;
+    }
+
+    .dark .theme-toggle-text {
+      color: rgb(226, 232, 240);
+    }
+
+    /* Enhanced Dark Mode Statistics Cards */
+    .dark .glass-effect {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+    }
+
+    /* Dark Mode Form Enhancements */
+    .dark form {
+      background: transparent;
+    }
+
+    /* Enhanced Dark Mode Buttons */
+    .dark button {
+      transition: all 0.3s ease;
+    }
+
+    .dark .btn-primary {
+      background: linear-gradient(135deg, rgb(59, 130, 246), rgb(37, 99, 235));
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .dark .btn-primary:hover {
+      background: linear-gradient(135deg, rgb(37, 99, 235), rgb(29, 78, 216));
+      box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .dark .btn-secondary {
+      background: rgba(51, 65, 85, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: rgb(226, 232, 240);
+    }
+
+    .dark .btn-secondary:hover {
+      background: rgba(71, 85, 105, 0.9);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    /* Enhanced Success Messages for Dark Mode */
+    .dark .success-message {
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: rgb(134, 239, 172);
+    }
+
+    /* Dark Mode Footer */
+    .dark footer {
+      background: rgba(15, 23, 42, 0.9);
+      border-top: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    /* Smooth Transitions for Theme Switching */
+    *, *::before, *::after {
+      transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 relative overflow-x-hidden">
+  
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+  
+  <!-- Floating Background Elements -->
+  <div class="floating-elements fixed inset-0 pointer-events-none z-0"></div>
+  
+  <!-- Enhanced Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <i data-lucide="moon" class="w-5 h-5 transition-transform duration-300" id="theme-icon"></i>
+    <span class="theme-toggle-text" id="theme-text">الوضع الداكن</span>
+  </button>
+  
+  <!-- Header with Logo -->
+  <header class="relative z-10 pt-8 pb-4">
+    <div class="container mx-auto px-4">
+      <div class="text-center animate-slide-up">
+        <div class="inline-flex items-center space-x-4 space-x-reverse">
+          <div class="relative">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center animate-pulse-glow shadow-lg">
+              <span class="text-2xl font-bold text-white">X</span>
+            </div>
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-300 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md">
+              15
+            </div>
+          </div>
+          <div>
+            <h1 class="text-4xl font-bold flex items-center flex-wrap justify-center">
+              <span class="delivery-text">Delivery </span>
+              <span class="fifteen-text">X-15 </span>
+              <span class="fifteen-text">Fifteen</span>
+              <i data-lucide="sparkles" class="w-6 h-6 text-yellow-400 mr-2 animate-pulse"></i>
+            </h1>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">الخدمة الأكثر تطوراً في العالم</p>
+            <div class="flex items-center justify-center mt-2 space-x-1 space-x-reverse">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-xs text-green-600 dark:text-green-400 font-medium">متصل الآن</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="relative z-10 container mx-auto px-4 pb-8">
+    <div class="max-w-2xl mx-auto">
+      
+      <!-- Advanced Statistics -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="glass-effect rounded-2xl p-4 text-center animate-slide-up">
+          <div class="text-blue-600 dark:text-blue-400 mb-2 mx-auto w-8 h-8 flex items-center justify-center">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div class="text-blue-600 dark:text-blue-400 text-2xl font-bold" data-count="99">99%</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">معدل النجاح</div>
+        </div>
+        
+        <div class="glass-effect rounded-2xl p-4 text-center animate-slide-up">
+          <div class="text-red-500 mb-2 mx-auto w-8 h-8 flex items-center justify-center">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+          </div>
+          <div class="text-red-500 text-2xl font-bold" data-count="15">15</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">دقيقة متوسط</div>
+        </div>
+        
+        <div class="glass-effect rounded-2xl p-4 text-center animate-slide-up">
+          <div class="text-blue-500 mb-2 mx-auto w-8 h-8 flex items-center justify-center">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <div class="text-blue-500 text-2xl font-bold">24/7</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">خدمة مستمرة</div>
+        </div>
+        
+        <div class="glass-effect rounded-2xl p-4 text-center animate-slide-up">
+          <div class="text-green-500 mb-2 mx-auto w-8 h-8 flex items-center justify-center">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div class="text-green-500 text-2xl font-bold" data-count="10000">10k+</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">عميل راضي</div>
+        </div>
+      </div>
+
+      <!-- Enhanced Order Form with Customer Name Field -->
+      <div class="glass-effect rounded-3xl p-6 animate-slide-up max-w-md mx-auto">
+        <div class="flex items-center space-x-3 space-x-reverse mb-6">
+          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full flex items-center justify-center shadow-lg">
+            <i data-lucide="shopping-cart" class="w-5 h-5 text-white"></i>
+          </div>
+          <h2 class="text-2xl font-bold gradient-text">طلب خاص</h2>
+        </div>
+
+        <form id="orderForm" class="space-y-6">
+          <!-- Customer Name Field (New) -->
+          <div class="floating-input">
+            <input type="text" id="customerName" placeholder=" " required>
+            <label>اسم العميل</label>
+            <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-600 dark:text-slate-400">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Order Details -->
+          <div class="floating-input">
+            <textarea id="orderDetails" placeholder=" " rows="4" required></textarea>
+            <label>اكتب طلبك بالتفصيل...</label>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="floating-input">
+            <input type="tel" id="phone" placeholder=" " required pattern="01[0-2,5][0-9]{8}">
+            <label>رقم الهاتف (مصري)</label>
+            <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-600 dark:text-slate-400">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="floating-input">
+            <input type="text" id="address" placeholder=" ">
+            <label>العنوان أو الموقع</label>
+            <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-600 dark:text-slate-400">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="space-y-4">
+            <!-- Submit Button -->
+            <button type="submit" class="btn-primary w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-4 px-6 rounded-2xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 space-x-reverse">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>إرسال الطلب</span>
+            </button>
+
+            <!-- WhatsApp Button -->
+            <button type="button" onclick="sendToWhatsApp()" class="btn-secondary w-full bg-green-600 text-white font-bold py-4 px-6 rounded-2xl hover:bg-green-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 space-x-reverse">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>إرسال عبر واتساب</span>
+            </button>
+
+            <!-- Location Button -->
+            <button type="button" onclick="getLocation()" class="btn-secondary w-full bg-slate-600 dark:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl hover:bg-slate-700 dark:hover:bg-slate-600 transition-all duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+              <i data-lucide="crosshair" class="w-4 h-4"></i>
+              <span>تحديد الموقع الحالي</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="success-message hidden glass-effect rounded-2xl p-6 mt-6 text-center animate-slide-up max-w-md mx-auto">
+        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 success-animation">
+          <i data-lucide="check-circle" class="w-8 h-8 text-white"></i>
+        </div>
+        <h3 class="text-xl font-bold text-green-800 dark:text-green-400 mb-2">تم إرسال الطلب بنجاح!</h3>
+        <p class="text-green-700 dark:text-green-300 text-sm">سنتواصل معك خلال 5 دقائق لتأكيد التفاصيل</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Enhanced Footer -->
+  <footer class="relative z-10 mt-12 py-8 border-t border-slate-200 dark:border-slate-700">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <div class="flex items-center justify-center space-x-4 space-x-reverse mb-6">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center shadow-lg">
+            <span class="text-lg font-bold text-white">X15</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold gradient-text">Delivery X-15 Fifteen</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">الخدمة الأكثر تطوراً في العالم</p>
+          </div>
+        </div>
+
+        <!-- Service Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="glass-effect rounded-xl p-4">
+            <i data-lucide="clock" class="w-6 h-6 text-blue-500 mx-auto mb-2"></i>
+            <h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-1">سرعة فائقة</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">توصيل خلال 15 دقيقة أو أقل</p>
+          </div>
+          
+          <div class="glass-effect rounded-xl p-4">
+            <i data-lucide="shield-check" class="w-6 h-6 text-green-500 mx-auto mb-2"></i>
+            <h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-1">موثوق وآمن</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">ضمان الجودة والأمان</p>
+          </div>
+          
+          <div class="glass-effect rounded-xl p-4">
+            <i data-lucide="headphones" class="w-6 h-6 text-purple-500 mx-auto mb-2"></i>
+            <h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-1">دعم مستمر</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">خدمة عملاء على مدار الساعة</p>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-600 dark:text-slate-400 mb-6">
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>15000</span>
+          </div>
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>info@deliveryx15.com</span>
+          </div>
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>جميع أنحاء مصر</span>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-xs text-slate-500 dark:text-slate-500">
+          <p>&copy; 2024 Delivery X-15 Fifteen. جميع الحقوق محفوظة.</p>
+          <p class="mt-1">طورت بأحدث التقنيات العالمية 🚀</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Enhanced Theme Management
+    let isDarkMode = false;
+    
+    function toggleTheme() {
+      isDarkMode = !isDarkMode;
+      const body = document.body;
+      const html = document.documentElement;
+      const themeIcon = document.getElementById('theme-icon');
+      const themeText = document.getElementById('theme-text');
+      
+      if (isDarkMode) {
+        html.classList.add('dark');
+        body.classList.add('dark');
+        themeIcon.setAttribute('data-lucide', 'sun');
+        themeText.textContent = 'الوضع الفاتح';
+        
+        // Enhanced dark mode particles
+        updateParticlesForDarkMode(true);
+        
+        // Save preference
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.remove('dark');
+        body.classList.remove('dark');
+        themeIcon.setAttribute('data-lucide', 'moon');
+        themeText.textContent = 'الوضع الداكن';
+        
+        // Light mode particles
+        updateParticlesForDarkMode(false);
+        
+        // Save preference
+        localStorage.setItem('theme', 'light');
+      }
+      
+      // Recreate icons after changing
+      lucide.createIcons();
+      
+      // Add smooth transition effect
+      document.body.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+    
+    // Load saved theme on page load
+    function loadSavedTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        toggleTheme();
+      }
+    }
+    
+    // Enhanced Particles System
+    function initParticles() {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      
+      function createParticle() {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 3 + 1,
+          speedX: (Math.random() - 0.5) * 2,
+          speedY: (Math.random() - 0.5) * 2,
+          opacity: Math.random() * 0.5 + 0.2,
+          color: isDarkMode ? `rgba(147, 197, 253, ${Math.random() * 0.8 + 0.2})` : `rgba(59, 130, 246, ${Math.random() * 0.6 + 0.1})`
+        };
+      }
+      
+      function updateParticlesForDarkMode(darkMode) {
+        particles.forEach(particle => {
+          particle.color = darkMode ? `rgba(147, 197, 253, ${Math.random() * 0.8 + 0.2})` : `rgba(59, 130, 246, ${Math.random() * 0.6 + 0.1})`;
+        });
+      }
+      
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach((particle, index) => {
+          particle.x += particle.speedX;
+          particle.y += particle.speedY;
+          
+          if (particle.x > canvas.width) particle.x = 0;
+          if (particle.x < 0) particle.x = canvas.width;
+          if (particle.y > canvas.height) particle.y = 0;
+          if (particle.y < 0) particle.y = canvas.height;
+          
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          ctx.fillStyle = particle.color;
+          ctx.fill();
+          
+          // Draw connections
+          particles.forEach((otherParticle, otherIndex) => {
+            if (index !== otherIndex) {
+              const dx = particle.x - otherParticle.x;
+              const dy = particle.y - otherParticle.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              
+              if (distance < 100) {
+                ctx.beginPath();
+                ctx.moveTo(particle.x, particle.y);
+                ctx.lineTo(otherParticle.x, otherParticle.y);
+                ctx.strokeStyle = isDarkMode ? `rgba(147, 197, 253, ${0.1 * (100 - distance) / 100})` : `rgba(59, 130, 246, ${0.1 * (100 - distance) / 100})`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+              }
+            }
+          });
+        });
+        
+        requestAnimationFrame(animateParticles);
+      }
+      
+      // Initialize
+      resizeCanvas();
+      for (let i = 0; i < 50; i++) {
+        particles.push(createParticle());
+      }
+      animateParticles();
+      
+      window.addEventListener('resize', resizeCanvas);
+      
+      // Make updateParticlesForDarkMode global
+      window.updateParticlesForDarkMode = updateParticlesForDarkMode;
+    }
+
+    // Enhanced Form Handling
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const customerName = document.getElementById('customerName').value.trim();
+      const orderDetails = document.getElementById('orderDetails').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      
+      if (!customerName || !orderDetails || !phone) {
+        showNotification('يرجى ملء جميع البيانات المطلوبة', 'error');
+        return;
+      }
+      
+      // Validate Egyptian phone number
+      const phoneRegex = /^01[0-2,5][0-9]{8}$/;
+      if (!phoneRegex.test(phone)) {
+        showNotification('يرجى إدخال رقم هاتف مصري صحيح', 'error');
+        return;
+      }
+      
+      // Show success message
+      showSuccessMessage();
+      
+      // Reset form
+      document.getElementById('orderForm').reset();
+      
+      // Send data (in a real app, this would be sent to a server)
+      console.log('Order submitted:', {
+        customerName,
+        orderDetails,
+        phone,
+        address,
+        timestamp: new Date().toISOString()
+      });
+    }
+    
+    function showSuccessMessage() {
+      const successMessage = document.getElementById('successMessage');
+      successMessage.classList.remove('hidden');
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      setTimeout(() => {
+        successMessage.classList.add('hidden');
+      }, 5000);
+    }
+    
+    function showNotification(message, type = 'info') {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full opacity-0`;
+      
+      if (type === 'error') {
+        notification.className += ' bg-red-500 text-white';
+      } else {
+        notification.className += ' bg-blue-500 text-white';
+      }
+      
+      notification.innerHTML = `
+        <div class="flex items-center space-x-2 space-x-reverse">
+          <i data-lucide="${type === 'error' ? 'alert-circle' : 'info'}" class="w-5 h-5"></i>
+          <span>${message}</span>
+        </div>
+      `;
+      
+      document.body.appendChild(notification);
+      lucide.createIcons();
+      
+      // Animate in
+      setTimeout(() => {
+        notification.classList.remove('translate-x-full', 'opacity-0');
+      }, 100);
+      
+      // Remove after 3 seconds
+      setTimeout(() => {
+        notification.classList.add('translate-x-full', 'opacity-0');
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+          }
+        }, 300);
+      }, 3000);
+    }
+    
+    // WhatsApp Integration
+    function sendToWhatsApp() {
+      const customerName = document.getElementById('customerName').value.trim();
+      const orderDetails = document.getElementById('orderDetails').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      
+      if (!customerName || !orderDetails || !phone) {
+        showNotification('يرجى ملء البيانات المطلوبة أولاً', 'error');
+        return;
+      }
+      
+      const message = `
+🛍️ طلب جديد من Delivery X-15 Fifteen
+
+👤 اسم العميل: ${customerName}
+📝 تفاصيل الطلب: ${orderDetails}
+📱 رقم الهاتف: ${phone}
+📍 العنوان: ${address || 'لم يتم تحديده'}
+
+⏰ وقت الطلب: ${new Date().toLocaleString('ar-EG')}
+      `.trim();
+      
+      const whatsappUrl = `https://wa.me/201062561074?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+    
+    // Geolocation
+    function getLocation() {
+      if (!navigator.geolocation) {
+        showNotification('المتصفح لا يدعم تحديد الموقع', 'error');
+        return;
+      }
+      
+      showNotification('جاري تحديد موقعك...', 'info');
+      
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const addressField = document.getElementById('address');
+          addressField.value = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+          addressField.focus();
+          showNotification('تم تحديد موقعك بنجاح!', 'success');
+        },
+        (error) => {
+          let errorMessage = 'لا يمكن تحديد موقعك';
+          switch(error.code) {
+            case error.PERMISSION_DENIED:
+              errorMessage = 'تم رفض إذن الوصول للموقع';
+              break;
+            case error.POSITION_UNAVAILABLE:
+              errorMessage = 'معلومات الموقع غير متاحة';
+              break;
+            case error.TIMEOUT:
+              errorMessage = 'انتهت مهلة تحديد الموقع';
+              break;
+          }
+          showNotification(errorMessage, 'error');
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 60000
+        }
+      );
+    }
+    
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadSavedTheme();
+      initParticles();
+      
+      // Add form submission handler
+      document.getElementById('orderForm').addEventListener('submit', handleFormSubmit);
+      
+      // Animate counting numbers
+      const countElements = document.querySelectorAll('[data-count]');
+      countElements.forEach(element => {
+        const target = parseInt(element.dataset.count);
+        let current = 0;
+        const increment = target / 50;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target + (element.textContent.includes('%') ? '%' : (element.textContent.includes('+') ? '+' : ''));
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.ceil(current) + (element.textContent.includes('%') ? '%' : (element.textContent.includes('+') ? '+' : ''));
+          }
+        }, 30);
+      });
+      
+      // Initialize icons
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
